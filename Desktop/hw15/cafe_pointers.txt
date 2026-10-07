@@ -39,3 +39,5 @@ The compiled executable prices should stay out of Git because it is a generated 
 2. Why push to the remote in addition to uploading hw15.zip on Canvas?
 
 Pushing to the remote provides a backup of the work and records the Git commit history. The Canvas zip file is the required submission, while the remote repository provides another copy and shows the development history.
+
+Final note: I learned that pointers store addresses, while dereferencing a pointer lets a program access the value at that address.
