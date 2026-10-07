@@ -1,0 +1,41 @@
+Homework 15 - Understanding Pointers
+
+Basic Questions - Part A
+
+1. What does a pointer store? How is that different from storing the price itself?
+
+A pointer stores the memory address of another variable. The price itself is an integer value such as 350, while a pointer stores where that integer is located in memory.
+
+2. After int *tag = &latte, what do tag, *tag, and &latte each mean?
+
+tag stores the address of latte. *tag accesses the value stored at that address, so it gives the value of latte. &latte gives the memory address of the latte variable.
+
+3. Why is it undefined behavior to dereference an uninitialized pointer? What should you initialize a pointer to if it does not yet have a target?
+
+An uninitialized pointer does not contain a reliable address, so dereferencing it can access an invalid memory location and cause undefined behavior. A pointer that does not have a target should be initialized to NULL.
+
+
+Basic Questions - Part B
+
+1. Why does retarget take int ** instead of int *?
+
+retarget takes int ** because it needs to change where the original pointer points. An int * can access the integer, but an int ** allows the function to change the pointer itself.
+
+2. Why can print_price take const int * while set_price cannot?
+
+print_price only reads the price, so it can use const int * to prevent the function from changing the value. set_price needs to change the price, so it cannot use a pointer to const int.
+
+3. In your array demo, why does p + 1 not add one byte?
+
+Pointer arithmetic is based on the size of the pointed-to type. Since p is an int pointer, p + 1 moves to the next int rather than moving one byte.
+
+
+Basic Questions - Part C
+
+1. Name one file that should stay out of Git for this project, and why.
+
+The compiled executable prices should stay out of Git because it is a generated binary file. The source code is what should be tracked.
+
+2. Why push to the remote in addition to uploading hw15.zip on Canvas?
+
+Pushing to the remote provides a backup of the work and records the Git commit history. The Canvas zip file is the required submission, while the remote repository provides another copy and shows the development history.
