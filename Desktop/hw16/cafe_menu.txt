@@ -1,0 +1,61 @@
+CS 1380 Homework 16: Pointer Arithmetic
+
+BASIC QUESTIONS — PART A
+
+1. If p is an int *, why does p + 1 usually add 4 bytes (not 1)? What would p + 1 add if p were a char *?
+
+When p is an int pointer, p + 1 advances to the next integer, so it usually moves by sizeof(int) bytes, commonly 4. If p were a char pointer, p + 1 would advance by sizeof(char), which is always 1 byte.
+
+2. What does end - start mean when both pointers point into the same int array?
+
+It gives the number of int elements between the two pointers, not the number of bytes. Both pointers must point into the same array or one position past its end.
+
+3. Why is *(prices + 5) undefined behavior for an array of length 5, even if it compiles?
+
+Valid array indexes are 0 through 4. prices + 5 points one position past the end, and that pointer may be compared but must not be dereferenced. Dereferencing it causes undefined behavior.
+
+
+HAND TRACE — PART B
+
+Given:
+int arr[] = {10, 20, 30, 40, 50};
+int *p = arr + 2;
+
+p points to arr[2], whose value is 30.
+
+*p = 30
+*(p + 1) = 40
+*(p - 1) = 20
+(arr + 4) - p = 2
+
+The last expression equals 2 because arr + 4 points to the fifth element and p points to the third element. Their distance is two elements.
+
+
+BASIC QUESTIONS — PART B
+
+1. How does drink_length know when to stop without being passed a length?
+
+It walks through the string one character at a time until it finds the null character '\0'. The null character marks the end of a C string. It then subtracts the starting pointer from the ending pointer to calculate the number of characters.
+
+2. When is a subscript prices[i] clearer than pointer increment, and when is a p++ walk a good fit?
+
+Array subscripts are clearer when accessing a particular element by its index. A p++ walk is useful when processing every element in sequence because the pointer advances directly through the array.
+
+
+BASIC QUESTIONS — PART C: GIT
+
+1. Why is a one-line hand trace useful before you chase a bad pointer in the debugger?
+
+A one-line hand trace helps me follow pointer positions and values step by step. It can reveal incorrect pointer arithmetic or an out-of-bounds access before I spend time debugging the program.
+
+2. Why push to the remote in addition to uploading hw16.zip on Canvas?
+
+Pushing saves a copy of my work in the remote Git repository and records my commit history. Uploading the ZIP to Canvas submits the assignment for grading, while the remote repository provides a backup and documents my progress.
+
+
+GIT STATUS
+
+
+
+GIT LOG
+
