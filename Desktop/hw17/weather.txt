@@ -1,0 +1,8 @@
+CS 1380 - Homework 17: Dynamic Memory Allocation
+
+1. We use malloc because the number of readings can change. An array like int log[100] has a fixed size and cannot hold 800 readings. malloc lets us request enough memory for the number of readings we need.
+2. malloc returns NULL if it cannot allocate the requested memory. We must check the pointer before writing through it because writing through a NULL pointer causes undefined behavior and can crash the program.
+3. The caller owns the memory returned by make_log and is responsible for freeing it with free or a function such as free_log. If the memory is never freed, it remains allocated until the program terminates, causing a memory leak while the program runs.
+4. calloc allocates memory and initializes all its bytes to zero. malloc allocates memory without initializing it, so its contents are indeterminate until we assign values to them.
+5. free_log takes int ** because it needs the address of the caller’s pointer. This lets it free the allocated memory and set the original pointer to NULL.
+6. If a function allocates memory with malloc but returns without freeing it or giving the pointer to the caller, the memory becomes unreachable. This causes a memory leak because the program has no way to free that allocation through the lost pointer.
