@@ -14,3 +14,21 @@ This commit adds the six Homework 17 files to the repository.
 
 Commit 2: Document dynamic memory allocation learning.
 This commit records the written answers and hand trace in weather.txt.
+
+git log --oneline -2
+fa8df0c (HEAD -> main, origin/main) Document dynamic memory allocation learning
+3900d62 Add station memory allocation helpers
+
+
+git status
+warning: could not open directory '.Trash/': Operation not permitted
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Desktop/hw14/cafe_specials.txt
+	modified:   Desktop/hw15/cafe_pointers.txt
+	modified:   Desktop/hw16/cafe_menu.txt
+
