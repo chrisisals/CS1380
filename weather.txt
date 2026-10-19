@@ -26,3 +26,9 @@ Maximum reading: 72
 
 Git Records
 
+christopherluckey@dhcp-10-5-88-50 hw18 % git status
+On branch main
+nothing to commit, working tree clean
+christopherluckey@dhcp-10-5-88-50 hw18 % git log --oneline
+04385e1 (HEAD -> main) Add weather station log implementation
+
