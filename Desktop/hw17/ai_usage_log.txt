@@ -1,0 +1,16 @@
+CS 1380 Homework 17 - AI Usage Log
+
+AI tool used: ChatGPT
+
+Assistance received:
+
+* Helped explain dynamic memory allocation with malloc and calloc.
+* Helped write and understand the functions in station.c.
+* Helped create a main.c demonstration program.
+* Helped explain NULL pointers, memory ownership, memory leaks, and free_log.
+* Helped organize written answers in weather.txt.
+
+My critique:
+I reviewed the suggested code and explanations. ChatGPT helped me understand how dynamic memory allocation works,
+ but I should verify that the code follows every requirement in the assignment. I should compile and test the program,
+ inspect the output, and make sure I understand the code before submitting it.
