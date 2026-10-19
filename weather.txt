@@ -1,0 +1,28 @@
+CS 1380 — Homework 18
+Dynamic Memory and realloc
+
+1. Why is it important to assign realloc to a temporary pointer?
+
+Using a temporary pointer prevents losing the original pointer if realloc fails. If realloc returns NULL, the original memory allocation is still valid and can still be freed.
+
+2. What does free_log(&log) accomplish?
+
+It frees the dynamically allocated memory and sets the original pointer to NULL. Passing the address of the pointer allows the function to change the caller’s pointer.
+
+3. Why must the program update n after appending a reading?
+
+The variable n tracks the number of readings. Updating it ensures the program knows how many readings are stored and where the next reading should be added.
+
+4. What is the difference between malloc and realloc?
+
+malloc allocates a new block of memory. realloc resizes an existing allocation and may move it to a new location.
+
+Hand Trace
+
+Initial log: 68, 71, 64
+After growing: 68, 71, 64, 72, 70, 67
+After appending: 68, 71, 64, 72, 70, 67, 69, 65
+Maximum reading: 72
+
+Git Records
+
