@@ -1,0 +1,6 @@
+*.o
+*.dSYM/
+scores
+scores.exe
+a.out
+hw19.zip

@@ -1,0 +1,15 @@
+CS 1380 Homework 19 — AI Usage Log
+
+AI tool used: ChatGPT
+
+How AI was used:
+
+* Explained array indexing and function parameters.
+* Guided debugging with LLDB, including setting a breakpoint and inspecting variables.
+* Helped identify what was wrong with GDB.
+
+Verification:
+
+* Ran the program and checked its output.
+* Used LLDB to inspect scores[2], which returned 15 and n, which returned 5 after stepping past its initialization.
+

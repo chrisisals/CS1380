@@ -1,0 +1,36 @@
+CS 1380 Homework 19 — Intramural Scores
+Basic Questions
+1. Valid indices for an array of length n range from 0 to n - 1. Reading scores[n] accesses memory outside the array, which causes undefined behavior in C.
+2. In main, sizeof(scores) / sizeof(scores[0]) works because scores is an actual array. Inside a function parameter declared as const int scores[], the parameter behaves like a pointer, so sizeof(scores) gives the pointer size rather than the whole array size.
+3. board[1][2] is the element in row 1, column 2 (using zero-based indexing). C stores 2D arrays in row-major order, meaning each row’s elements are stored contiguously before the next row.
+4. A function receiving an array must also receive its length because the array’s length generally is not available from the pointer parameter. The length lets the function know how many elements it can safely process.
+5. In a 2D print loop, the first index is the row and the second is the column. Swapping them changes the order of access and can cause incorrect results or out-of-bounds access when the dimensions differ.
+6. Compiling with -g adds debugging information that GDB uses to associate machine instructions with source code, variables, and line numbers. Without -g, debugging source-level variables and breakpoints may be limited or unavailable.
+7. Pushing to the remote Git repository keeps a backup of the source code and commit history outside the local computer. The Canvas ZIP is the submission copy, while the repository records the work and its development history.
+
+- LLDB Transcript
+
+(lldb) frame variable n
+(int) n = 5
+(lldb) print scores[2]
+(const int) 15
+(lldb) continue
+Process 88530 resuming
+scores: 12 8 15 10 9
+n (sizeof) = 5
+score_at 2 = 15
+score_at 9 = 0
+sum = 54
+max = 15
+count >= 10: 3
+board:
+ 12   8  15  10
+  9  11   7  14
+ 13   6  16   8
+board sum = 129
+Process 88530 exited with status = 0 (0x00000000) 
+(lldb) quit
+
+Git Records
+git status
+git --oneline
