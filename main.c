@@ -1,78 +1,40 @@
 /*
- * main.c
- * Demonstrates the weather station log functions.
- * Author: Christopher Luckey
+ * Demonstrates printing, searching and updating a console picture.
+ * Name: Christopher Luckey 
  */
 
+#include "picture.h"
+#include <stddef.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include "station.h"
 
-int main(void) {
-    int n = 3;
-    int *log = make_log(n);
+int main(void)
+{
+    int pic[][COLS] = {
+        {0, 0, 0, 0, 0},
+        {0, 1, 1, 1, 0},
+        {0, 1, 0, 1, 0},
+        {0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0}
+    };
 
-    if (log == NULL) {
-        fprintf(stderr, "Could not allocate initial log.\n");
-        return 1;
-    }
+    int nrows = (int)(sizeof pic / sizeof pic[0]);
 
-    log[0] = 68;
-    log[1] = 71;
-    log[2] = 64;
+    printf("Original picture:\n");
+    print_picture(pic, nrows);
 
-    printf("start n=%d: ", n);
-    print_log(log, n);
+    printf("find 1 -> %d\n", find_code(pic, nrows, 1));
+    printf("find 9 -> %d\n", find_code(pic, nrows, 9));
 
-    int *temp = grow_log(log, n, 6);
-    if (temp == NULL) {
-        fprintf(stderr, "Could not grow log.\n");
-        free_log(&log);
-        return 1;
-    }
+    set_cell(pic, nrows, 2, 2, 1);
+    printf("After set_cell(2, 2, 1):\n");
+    print_picture(pic, nrows);
 
-    log = temp;
-    log[3] = 72;
-    log[4] = 70;
-    log[5] = 67;
-    n = 6;
+    set_cell(pic, nrows, 9, 0, 1);
+    printf("set_cell(9, 0, 1) ignored\n");
 
-    printf("after grow n=%d: ", n);
-    print_log(log, n);
-
-    temp = append_reading(log, &n, 69);
-    if (temp == NULL) {
-        fprintf(stderr, "Could not append reading.\n");
-        free_log(&log);
-        return 1;
-    }
-    log = temp;
-
-    temp = append_reading(log, &n, 65);
-    if (temp == NULL) {
-        fprintf(stderr, "Could not append reading.\n");
-        free_log(&log);
-        return 1;
-    }
-    log = temp;
-
-    printf("after append n=%d: ", n);
-    print_log(log, n);
-
-    printf("max = %d\n", max_reading(log, n));
-
-    printf("NULL log test: ");
-    print_log(NULL, 3);
-    printf("NULL max test = %d\n", max_reading(NULL, 3));
-
-    free_log(&log);
-    printf("after free_log, pointer is %s\n",
-           log == NULL ? "NULL" : "not NULL");
-
-    free_log(&log);
+    printf("Null picture test:\n");
+    print_picture(NULL, 4);
+    printf("find_code(NULL, 4, 1) -> %d\n", find_code(NULL, 4, 1));
 
     return 0;
 }
-
-
-

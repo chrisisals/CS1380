@@ -1,0 +1,7 @@
+AI Usage Log — Homework 20
+
+I used ChatGPT to help me understand the assignment requirements.
+
+I reviewed the generated code and used the compiler and program
+output to test the implementation. ChatGPT also helped me with
+some of the terminal commands.

@@ -1,6 +1,4 @@
 *.o
 *.exe
 a.out
-station
-.DS_Store
-
+picture

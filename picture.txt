@@ -1,0 +1,25 @@
+Original picture:
+.....
+.###.
+.#.#.
+.###.
+.....
+find 1 -> 6
+find 9 -> -1
+After set_cell(2, 2, 1):
+.....
+.###.
+.###.
+.###.
+.....
+set_cell(9, 0, 1) ignored
+Null picture test:
+find_code(NULL, 4, 1) -> -1
+
+Basic Questions
+
+1. In the worst case, find_code must check every cell because the target may be in the last cell or may not exist.
+2. COLS is part of the parameter type so C knows the size of each row. The row count is separate because the array can have different numbers of rows.
+3. The array stores integer codes. print_picture maps code 0 to a dot (.) and code 1 to a hash (#).
+4. If row equals nrows, it is outside the valid range because valid row indices end at nrows - 1.
+5. The flat index of pic[2][3] is 2 * 5 + 3 = 13.
