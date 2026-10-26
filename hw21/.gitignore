@@ -1,0 +1,9 @@
+roster
+*.o
+*.exe
+a.out
+roster
+venv/
+before.txt
+after.txt
+.DS_Store

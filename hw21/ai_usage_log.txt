@@ -1,0 +1,6 @@
+AI Usage Log — Homework 21
+
+Used ChatGPT to help confirm and understand the implementations in roster.c and main.c.
+Compiled and tested the program using Clang in the macOS Terminal.
+Reviewed and verified the code and output myself.
+

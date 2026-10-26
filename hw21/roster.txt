@@ -1,0 +1,12 @@
+CS 1380 Homework 21 — Basic Questions
+1. A C string must end with ‘\0’ so functions know where the string stops. Without it, a function may continue reading beyond the array, causing undefined behavior.
+2. char *p = "Wolves"; points to a string literal, which must not be modified. char name[] = "Wolves"; creates a modifiable character array, so changing name[0] is allowed.
+3. If dest has room for 5 characters including ‘\0’ and src is “Wolves”, team_copy should store “Wolv” followed by ‘\0’. The remaining characters are truncated.
+4. After a truncated team_copy, the destination is still a valid C string because the function stores ‘\0’ in the final available position.
+5. team_same compares the characters in the arrays one by one until a difference or the terminating ‘\0’. The arrays can be different objects in memory but still contain identical strings.
+6. A dependency is something a program needs to work. In C, a compiler such as Clang is a dependency; in Python, a package imported by a program can be a dependency.
+7. A project should use its own environment so its dependencies and versions stay separate from other projects and the operating system’s Python installation.
+8. Before activating the virtual environment, the PATH uses the usual system locations. After activation, the virtual environment’s bin directory is placed at the front of PATH, so which python should point to the environment’s Python. The exact diff and paths must come from my own terminal output.
+9. 9. The PATH changed because activating the virtual environment placed its venv/bin directory at the beginning of PATH. The which python command pointed to /Users/christopherluckey/Desktop/hw21/venv/bin/python, showing that the environment’s Python is used first. The diff output showed the PATH change, and deactivate restores the previous shell environment.
+10. Pushing to the remote repository keeps a backup of the commits and records the project’s history. Uploading the ZIP to Canvas submits the assignment for grading, so both are required.
+
