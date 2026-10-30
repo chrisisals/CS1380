@@ -1,0 +1,107 @@
+CS 1380 - Homework 22
+Lineup Labels - String Library
+
+PART A - BASIC QUESTIONS
+
+1. Why prefer strncpy plus a forced '\0' over plain strcpy when the destination has a fixed size?
+
+strncpy allows us to limit how many characters are copied into
+the destination buffer. Adding a forced null terminator ensures
+the destination remains a valid C string and prevents reading
+past the end of the buffer.
+
+2. Before calling strncat, what two numbers do you need so you
+know how many characters still fit?
+
+We need the destination buffer's total size and the current
+length of the destination string. We subtract the current
+length and one character for the null terminator from the
+total size to determine how much space remains.
+
+3. What does strcmp return when the two strings are equal?
+
+strcmp returns 0 when the two strings are equal.
+
+PART B - BASIC QUESTIONS
+
+4. If strstr finds a match, why is the return value a pointer
+into the original string rather than a new copy?
+
+strstr returns a pointer to the first matching character
+inside the original string. It does not create a new string
+because it only needs to identify where the matching text
+appears. This saves memory and avoids unnecessary copying.
+
+5. After safe_join, how do you know dest is still a valid
+C string?
+
+safe_join leaves room for the null terminator by limiting
+the number of appended characters to the available space.
+Therefore, the destination remains null-terminated.
+
+PART C - BASIC QUESTIONS
+
+6. Why is giving a classmate only your .c files different
+from giving them the compiled lineup program?
+
+The .c files contain the source code and instructions
+that the computer compiler uses to create the program.
+The compiled lineup program is an executable that can
+be run without needing to compile the source code again,
+provided it is compatible with the computer's system.
+
+PART C - ARTIFACTS AND VERSIONING
+
+1. Source code and artifact
+
+The source for this homework is the C source code in
+lineup.c and main.c. One artifact produced by compiling
+the source code is the executable program named lineup.
+
+2. Semantic Versioning
+
+PATCH: A small bug fix that does not change existing
+functionality or introduce new features.
+
+MINOR: Adds new functionality in a backward-compatible way.
+
+MAJOR: Introduces changes that are not backward-compatible
+with previous versions.
+
+3. Version number after fixing safe_join
+
+The next version should be 1.2.4.
+
+This is a PATCH update because fixing a bug does not
+change the existing function names or introduce new
+features.
+
+LEARNING NOTES
+
+strlen measures the length of a string without counting
+the terminating null character.
+
+strncpy copies a limited number of characters, but it
+does not always automatically add a null terminator.
+
+strncat appends a limited number of characters to an
+existing string.
+
+strcmp compares two strings and returns zero when
+they are equal.
+
+strstr searches for a substring and returns a pointer
+to its first occurrence.
+
+A null terminator is important because it tells C where
+a string ends.
+
+Git status
+christopherluckey@Christophers-MacBook-Pro-3 hw22 % git status
+On branch main
+nothing to commit, working tree clean
+
+Git log --oneline
+christopherluckey@Christophers-MacBook-Pro-3 hw22 % git log --oneline
+397367e (HEAD -> main) Add homework answers and AI usage log
+0bcb947 Add lineup string helper functions

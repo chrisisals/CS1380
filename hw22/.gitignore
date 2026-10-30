@@ -1,0 +1,7 @@
+*.o
+*.exe
+a.out
+lineup
+
+.DS_Store
+lineup.dSYM/
