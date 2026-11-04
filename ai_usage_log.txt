@@ -1,3 +1,4 @@
+ HEAD
 AI Usage Log — Homework 20
 
 I used ChatGPT to help me understand the assignment requirements.
@@ -5,3 +6,28 @@ I used ChatGPT to help me understand the assignment requirements.
 I reviewed the generated code and used the compiler and program
 output to test the implementation. ChatGPT also helped me with
 some of the terminal commands.
+
+
+CS 1380 - Homework 23
+AI Usage Log
+
+AI Tool: ChatGPT
+
+Prompt:
+I asked ChatGPT to help me review my code
+
+AI Response:
+ChatGPT provided better ways to write my code and confirmed that it was good to go.
+
+My Critique:
+The response was useful because it explained how the
+structure and pointers worked.
+
+What I Will Verify:
+I will compile the program, check for warnings, run
+the demonstrations, inspect the code, and make sure
+I understand each function before submitting.
+
+I am responsible for reviewing and understanding
+all submitted work.
+ 848baba (Add player demo and homework answers)

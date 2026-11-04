@@ -1,0 +1,90 @@
+CS 1380 - Homework 23
+Player Cards - Basic Questions
+
+1. Why put name, jersey, and points in one struct?
+
+A struct groups related information about one player into a
+single variable. This makes the program easier to organize,
+pass between functions, and maintain.
+
+2. What does p->jersey mean, and how is it different from
+p.jersey?
+
+p->jersey accesses the jersey member through a pointer to
+a structure. p.jersey accesses the jersey member directly
+when p is a structure variable instead of a pointer.
+
+3. Why must init_player leave room for '\0' when copying
+into name[32]?
+
+The name array has 32 characters, but one position must
+be reserved for the null terminator. Without '\0', the
+string may not end correctly and printing it could read
+memory beyond the array.
+
+4. Why does add_points take struct Player * instead of
+struct Player by value?
+
+A pointer allows add_points to modify the original player.
+Passing the structure by value would create a copy, so
+changes would not update the original structure.
+
+5. If you have struct Player roster[3], how do you pass
+the second player to print_player?
+
+Use:
+
+print_player(&roster[1]);
+
+Array indexing starts at zero, so index 1 represents
+the second player. The ampersand passes its address.
+
+6. What is a coding agent, and how is it different from
+plain autocomplete?
+
+A coding agent is an AI tool that can inspect files,
+suggest or make code changes, and sometimes run commands
+to help complete programming tasks. Plain autocomplete
+mainly predicts the next few tokens or lines of code,
+while an agent can work on larger tasks and multiple steps.
+
+7. Give one example of guidance or correction you would
+give an agent working on init_player.
+
+I would tell the agent to check whether the player pointer
+is NULL before changing anything and to copy no more than
+31 characters into the name array, leaving room for the
+null terminator. I would also ask it to handle a NULL
+name safely.
+
+8. Name two risks of coding agents and explain what you
+will do differently.
+
+One risk is that an agent can generate incorrect code
+that looks correct. I will compile and test the program
+and inspect the changes before accepting them.
+
+Another risk is security problems or unsafe code. I will
+review file operations, commands, and pointer handling
+rather than automatically trusting the agent.
+
+9. Why do many agent tools ask you to confirm a shell
+or file-edit tool call before it runs?
+
+Confirmation allows the user to review what the agent
+wants to execute or change. This helps prevent accidental
+file deletion, unwanted modifications, or dangerous
+commands and keeps the user in control.
+
+10. After an agent edits your C file, what is one check
+you should run before trusting the change?
+
+I should compile the program using the required GCC
+command, fix any warnings or errors, and run the program
+to verify that it behaves correctly.
+
+
+GIT STATUS
+
+GIT LOG ONELINE
+
