@@ -1,4 +1,9 @@
 *.o
 *.exe
 a.out
+<<<<<<< HEAD
 picture
+=======
+player
+
+>>>>>>> 7571505 (Add player structure and helper functions)
