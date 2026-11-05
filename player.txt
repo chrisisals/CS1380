@@ -85,6 +85,13 @@ to verify that it behaves correctly.
 
 
 GIT STATUS
+christopherluckey@dhcp-10-5-66-196 hw23 % git status
+On branch main
+nothing to commit, working tree clean
 
 GIT LOG ONELINE
+christopherluckey@dhcp-10-5-66-196 hw23 % git log --oneline
+a911956 (HEAD -> main) Add player structure and helper functions
+848baba Add player demo and homework answers
+7571505 Add player structure and helper functions
 
