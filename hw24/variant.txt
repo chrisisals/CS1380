@@ -1,0 +1,23 @@
+1. A union stores all its members in the same memory space, while a struct gives each member its own separate memory space.
+
+2. It is unsafe because the union's active member is score, not average, so reading value.average would interpret the stored integer as a float.
+
+3. The kind field identifies which union member is currently active so the program knows which member is safe to read.
+
+4. They check kind to make sure they return the correct member of the union instead of interpreting the wrong type of data.
+
+5. It shows that a union reuses the same memory for its members, while a struct stores both members separately, which usually requires more memory.
+
+6. Clearing the context solves the problem of an AI conversation becoming too long or filled with unrelated information, allowing the agent to start with a cleaner context.
+
+7. Compaction summarizes important information from a conversation so the agent can continue working without needing the entire conversation history.
+
+8. AGENTS.md is a project instruction file that gives an AI coding agent standing rules and guidance. It differs from repeating advice in every prompt because the instructions can be reused automatically across relevant tasks.
+
+9. I would require the agent to compile every C program using -Wall -Wextra -Wpedantic -std=c23 and fix all warnings before finishing.
+
+10. It is risky because shell commands can delete files, modify important project data, or execute unsafe operations without the user's knowledge or permission.
+
+11. I would start a new agent conversation when beginning an unrelated assignment or when the current conversation has too much unrelated information and context.
+
+
