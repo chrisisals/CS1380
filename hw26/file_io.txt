@@ -1,0 +1,24 @@
+1. fopen returns NULL if a file cannot be opened. Before using the FILE pointer, check whether it is NULL to make sure the file opened successfully.
+
+2. "r" opens an existing file for reading, while "w" opens a file for writing and creates it if necessary, replacing its previous contents.
+
+3. Every successful fopen should have a matching fclose to release system resources, prevent resource leaks, and ensure buffered data is properly written.
+
+4. fgets is a better choice than fscanf when reading a whole line because it preserves spaces and reads until a newline or the buffer limit.
+
+5. Binary fwrite stores a struct's data directly in binary form, while fprintf converts values into readable text characters.
+
+6. You can check file operations by inspecting return values such as fopen (NULL on failure), fprintf (negative on failure), and fread/fwrite (number of items successfully read or written).
+
+7. Yes. Putting usage instructions before build steps allows readers to understand what the program does and how to run it before learning how to compile it.
+
+8. Useless comment: /* Add one to count. */
+   Helpful comment: /* WHY: Checking the file pointer prevents reading from an invalid file stream. */
+
+9. Four things a good bug report should include are:
+   - A clear description of the problem.
+   - Steps to reproduce the problem.
+   - Expected behavior.
+   - Actual behavior and any error messages.
+
+10. If an LLM helped write part of this homework, I should write the prompts, responses and then write my critique in ai_usage_log.txt. I should not submit code that I wouldn’t understand.

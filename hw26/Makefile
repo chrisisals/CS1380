@@ -1,12 +1,20 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Wpedantic -std=c23 -g
-TARGET = basic_file_ops
-SRC = basic_file_ops.c
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+TARGETS = basic_file_ops text_copy binary_records
+
+all: $(TARGETS)
+
+basic_file_ops: basic_file_ops.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+text_copy: text_copy.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+binary_records: binary_records.c
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGETS)
 
-.PHONY: clean
+.PHONY: all clean

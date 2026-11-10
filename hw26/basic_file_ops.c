@@ -3,6 +3,10 @@
 
 int main(void)
 {
+
+/* WHY: Checking fopen before using the FILE pointer prevents
+   the program from accessing an invalid file stream. */
+
     FILE *file = fopen("out.txt", "w");
 
     if (file == NULL) {

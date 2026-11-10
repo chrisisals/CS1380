@@ -1,0 +1,5 @@
+Welcome to CS 1380.
+We are learning file input and output.
+This is our sample text file.
+C programming is interesting.
+Homework 26 is in progress.

@@ -1,0 +1,7 @@
+*.dSYM
+basic_file_ops
+text_copy
+binary_records
+out.txt
+copy.txt
+records.bin
