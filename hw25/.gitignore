@@ -1,0 +1,7 @@
+*.o
+*.exe
+a.out
+basic_recursion
+.DS_Store
+
+*.dSYM/

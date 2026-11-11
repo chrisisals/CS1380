@@ -1,0 +1,62 @@
+CS 1380 - Homework 25
+Recursion and Beyond the Code
+
+HAND TRACE: factorial(4)
+
+Calls:
+factorial(4) = 4 * factorial(3)
+factorial(3) = 3 * factorial(2)
+factorial(2) = 2 * factorial(1)
+factorial(1) = 1
+
+Returns (stack unwinds):
+factorial(1) returns 1
+factorial(2) returns 2 * 1 = 2
+factorial(3) returns 3 * 2 = 6
+factorial(4) returns 4 * 6 = 24
+
+BASIC QUESTIONS
+
+1. The base case is when n <= 1, which returns 1. The recursive case multiplies n by factorial(n - 1).
+
+2. Without a base case, the function would keep calling itself until the program runs out of stack space.
+
+3. Naive fib(n) repeats work because the same smaller Fibonacci values are calculated multiple times.
+
+4. The array pointer moves forward by one element and the size n decreases by one on each recursive call.
+
+5. A loop is better when scanning a large array because it avoids the extra function calls and stack memory used by recursion.
+
+6. A useless comment simply repeats what the code does. A helpful comment explains why the code uses a particular approach or handles a specific condition.
+
+7. If the WHY comment were deleted, the reasoning behind the implementation would be lost, making the code harder to understand and maintain.
+
+8. The commit message "Implement recursive functions and build setup" captures the purpose of the changes. It is better than "fix" because it explains what was implemented.
+
+9. Four things a good bug report should include:
+- A clear description of the problem.
+- Steps to reproduce the problem.
+- Expected behavior.
+- Actual behavior and any error messages.
+
+10. If an LLM helped me write or debug recursion, I should disclose the prompts, its responses, and my critique of the suggestions. I should verify that I understand the code and not submit code that I cannot explain.
+
+GIT STATUS:
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   recursion.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GIT LOG:
+c8e73eb Document recursion traces
+33db9ce Ignore macOS debug symbol files
+b7e6778 Implement recursive functions and build setup
+
+Weak message: fixed stuff
+
+Improved message:
+Problem: Recursive array scanning did not handle empty arrays.
+Solution: Add a base case for empty arrays before recursive calls.
