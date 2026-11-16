@@ -12,3 +12,28 @@
 gcc -Wall -Wextra -Wpedantic -std=c23 -pthread -g threads.c -o threads
 
 I used clang-format to maintain consistent indentation and spacing
+
+----------------------------------------------------------------------------
+
+git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../hw26/file_io.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.DS_Store
+	../hw26/.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git log --oneline
+
+74b6714 (HEAD -> main) Add build targets and ignore generated files
+dae93fd Implement pthread counter and parallel array sum
