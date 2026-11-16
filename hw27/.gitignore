@@ -1,0 +1,5 @@
+threads
+main
+*.o
+*.dSYM/
+.DS_Store
