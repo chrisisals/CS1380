@@ -1,0 +1,14 @@
+1. Threads in the same process share memory, global variables, and other process resources, but each thread has its own stack.
+2. Because counter++ involves reading, modifying, and writing shared memory, two threads can interfere with each other and lose updates.
+3. A critical section is a part of the program where shared data is accessed or modified and must be protected from simultaneous access.
+4. I divided the array into four equal sections using start and end indexes so each thread processes a separate portion without overlapping.
+5. Multithreading might not speed up a small array sum because creating and managing threads can take more time than performing the calculation sequentially.
+6. A linter checks source code for potential mistakes, style problems, and compiler warnings before the program runs.
+7. An automated test is better because it checks expected results consistently and detects failures without relying on someone manually inspecting output.
+8. The Makefile test target builds the programs and runs them to check that they execute correctly and produce matching totals.
+9. A project-wide formatter keeps code consistent and readable, making it easier for everyone to understand and maintain.
+10. I used an LLM for assistance with understanding and writing parts of the thread code, and I should disclose that assistance. I should not submit code that I cannot explain, especially how a race condition or mutex works.
+
+gcc -Wall -Wextra -Wpedantic -std=c23 -pthread -g threads.c -o threads
+
+I used clang-format to maintain consistent indentation and spacing
