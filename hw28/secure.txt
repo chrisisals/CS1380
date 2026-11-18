@@ -77,3 +77,10 @@ It found no matches in my source files.
 Continuous Integration / Pre-commit
 
 Before every commit, I would automatically run make test to check that my string helper functions still work. I would also compile the program using -Wall -Wextra -Werror to catch warnings and potential mistakes before committing or pushing.
+
+Final Verification
+
+The project was rebuilt using make clean and make.
+The automated regression tests were run using make test.
+Compilation completed without warnings.
+All regression tests passed.
