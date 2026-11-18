@@ -1,0 +1,7 @@
+secure
+test_secure
+ownership
+*.o
+*.exe
+a.out
+.DS_Store

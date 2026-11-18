@@ -1,0 +1,79 @@
+CS 1380 - Homework 28
+Part A: Safe Strings and Buffers
+
+Implemented safe_copy() and safe_concat().
+
+safe_copy():
+- Checks for invalid pointers and buffer sizes.
+- Copies strings safely.
+- Prevents buffer overflow.
+- Returns 1 when truncation occurs.
+- Returns 0 when successful.
+- Returns -1 for invalid inputs.
+
+safe_concat():
+- Checks for invalid pointers and buffer sizes.
+- Prevents buffer overflow.
+- Preserves null termination.
+- Returns 1 when truncation occurs.
+- Returns 0 when successful.
+- Returns -1 for invalid inputs.
+
+Tests performed:
+1. Successful string copy.
+2. String truncation.
+3. Successful concatenation.
+4. Invalid input handling.
+
+All tests passed.
+
+Part B: Dangling Pointers and Ownership
+
+Demonstrated safe dynamic memory management using malloc() and free().
+
+The program:
+- Allocates memory using malloc().
+- Checks whether allocation succeeded.
+- Stores and prints a value.
+- Releases allocated memory using free().
+- Sets the pointer to NULL after freeing it.
+
+Memory ownership:
+The code that allocates memory is responsible for releasing it when it is no longer needed.
+
+Setting a pointer to NULL after free() helps prevent accidental use of that pointer.
+
+Part C: Dangerous API Search
+
+Command used:
+grep -nE 'gets|strcpy|sprintf' -- *.c *.h
+
+Result:
+No matches found.
+
+The search did not find any of the listed dangerous functions in my source files.
+
+Basic Questions
+
+1. gets() is unsafe because it does not limit how many characters are read. Use fgets() instead.
+
+2. A fixed char buf[N] copy must leave room for '\0' so the string is properly terminated.
+
+3. A buffer overflow happens when a program writes more data into a buffer than it can hold.
+
+4. A dangling pointer is a pointer that refers to memory that has already been freed.
+
+5. Setting a pointer to NULL after free() helps prevent accidentally using a dangling pointer.
+
+6. A regression test checks that existing functionality still works after code changes. My make test command performs automated checks on safe_copy() and safe_concat().
+
+7. grep -nE 'gets|strcpy|sprintf' -- *.c *.h
+It found no matches in my source files.
+
+8. A simple grep search might miss dangerous calls because it only searches for matching text and does not understand the meaning of the code.
+
+9. I would use safe_copy() instead of strcpy() because safe_copy() checks the destination buffer size and prevents buffer overflow.
+
+Continuous Integration / Pre-commit
+
+Before every commit, I would automatically run make test to check that my string helper functions still work. I would also compile the program using -Wall -Wextra -Werror to catch warnings and potential mistakes before committing or pushing.
